@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const quickActions = [
   { label: "Pix", image: "/action-icons/pix.png" },
   { label: "Pagar", image: "/action-icons/pagar.png" },
-  { label: "Pegar emprestado", image: "/action-icons/pegar-emprestado.png" },
+  { label: "Pegar emprestado", image: "/action-icons/pegar-emprestado.png", overlay: true },
   { label: "Transferir", image: "/action-icons/transferir.png" },
   { label: "Depositar", image: "/action-icons/depositar.png" },
   { label: "Recarga", image: "/action-icons/recarga.png" },
@@ -81,7 +81,10 @@ export default function Home() {
         <div className="quick-scroll" aria-label="Ações rápidas">
           {quickActions.map((action) => (
             <button className="quick-action" type="button" key={action.label} onClick={() => showNotice(`${action.label} selecionado`)}>
-              <span className="quick-circle"><img className="quick-icon" src={action.image} alt="" /></span>
+              <span className={`quick-circle${action.overlay ? " quick-circle--loan" : ""}`}>
+                <img className="quick-icon" src={action.image} alt="" />
+                {action.overlay && <span className="loan-overlay" aria-hidden="true"><i /><i /><i /><i /></span>}
+              </span>
               <span>{action.label}</span>
             </button>
           ))}

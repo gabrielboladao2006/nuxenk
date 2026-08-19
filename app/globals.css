@@ -31,8 +31,11 @@ button:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 .quick-scroll::-webkit-scrollbar, .notices-scroll::-webkit-scrollbar, .learn-scroll::-webkit-scrollbar { display: none; }
 .quick-scroll { gap: 13px; margin-top: 36px; padding: 0 27px 6px; scroll-padding-inline: 27px; touch-action: pan-x; -webkit-overflow-scrolling: touch; }
 .quick-action { flex: 0 0 70px; padding: 0; background: transparent; text-align: center; scroll-snap-align: start; }
-.quick-circle { display: grid; width: 70px; height: 70px; place-items: center; border-radius: 50%; background: var(--light-gray); }
+.quick-circle { position: relative; display: grid; width: 70px; height: 70px; place-items: center; border-radius: 50%; background: var(--light-gray); }
 .quick-icon { display: block; width: 50px; height: 50px; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
+.quick-circle--loan .quick-icon { transform: translateY(-4px); }
+.loan-overlay { position: absolute; z-index: 1; top: 42px; left: 50%; display: flex; width: 28px; height: 14px; align-items: center; justify-content: center; gap: 2.5px; border-radius: 4px; background: var(--purple); box-shadow: 0 1px 2px rgb(0 0 0 / 18%); transform: translateX(-50%); }
+.loan-overlay i { display: block; width: 3px; height: 3px; border-radius: 50%; background: #fff; }
 .quick-action > span:last-child { display: block; margin-top: 12px; font-size: 14px; font-weight: 600; line-height: 17px; }
 
 .cards-padding { margin-top: 41px; }
