@@ -38,7 +38,15 @@ function UiIcon({ name, size = 24 }: { name: string; size?: number }) {
   if (name === "eye") return <svg {...common}><path d="M2.8 12s3.3-6 9.2-6 9.2 6 9.2 6" /><circle cx="12" cy="12" r="2.2" /></svg>;
   if (name === "help") return <svg {...common}><circle cx="12" cy="12" r="8.3" /><path d="M9.8 9.2a2.4 2.4 0 1 1 3.1 2.3c-.7.3-.9.8-.9 1.5" /><path d="M12 16.5h.01" /></svg>;
   if (name === "mail") return <svg {...common}><rect x="2.8" y="5.2" width="15.2" height="11.2" rx="2.2" /><path d="m4.4 7 6 4.6L16.5 7" /><path d="M20.2 10.8v6M17.2 13.8h6" /></svg>;
-  if (name === "pix") return <svg {...common} strokeWidth="2.1"><path d="m8.3 4.2-4.1 4a2.5 2.5 0 0 0 0 3.6l4.1 4a2.5 2.5 0 0 0 3.5 0l4-4" /><path d="m15.7 19.8 4.1-4a2.5 2.5 0 0 0 0-3.6l-4.1-4a2.5 2.5 0 0 0-3.5 0l-4 4" /></svg>;
+  if (name === "pix") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M9.4 3.6a3.68 3.68 0 0 1 5.2 0l5.8 5.8a3.68 3.68 0 0 1 0 5.2l-5.8 5.8a3.68 3.68 0 0 1-5.2 0l-5.8-5.8a3.68 3.68 0 0 1 0-5.2l5.8-5.8Zm-1.2 2.9-2.6 2.6 2.55 2.55a5.45 5.45 0 0 0 7.7 0L18.4 9.1l-2.6-2.6-2.2 2.2a2.26 2.26 0 0 1-3.2 0L8.2 6.5Zm0 11 2.2-2.2a2.26 2.26 0 0 1 3.2 0l2.2 2.2 2.6-2.6-2.55-2.55a5.45 5.45 0 0 0-7.7 0L5.6 14.9l2.6 2.6Z"
+      />
+    </svg>
+  );
   if (name === "barcode") return <svg {...common} strokeWidth="2.3"><path d="M5 8v8M8 8v8M11.5 8v8M14 8v8M18 8v8" /></svg>;
   if (name === "transfer") return <svg {...common}><rect x="2.5" y="5" width="15" height="10.5" rx="1.2" /><circle cx="10" cy="10.2" r="1.5" /><path d="M15 12.7 21 6.8M16.8 6.8H21V11" /></svg>;
   if (name === "deposit") return <svg {...common}><rect x="2.5" y="5" width="15" height="10.5" rx="1.2" /><circle cx="10" cy="10.2" r="1.5" /><path d="m15 11.5 6 5.8M21 13v4.3h-4.2" /></svg>;
