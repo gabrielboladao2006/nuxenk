@@ -89,7 +89,6 @@ export default function Home() {
         <div className="section-padding cards-padding">
           <button className="my-cards" type="button" onClick={() => showNotice("Seus cartões")}>
             <span className="my-cards-main"><span className="card-icon-frame"><img className="card-icon" src="/action-icons/cartoes.png" alt="" /></span><span>Meus cartões</span></span>
-            <span className="card-count">3</span>
           </button>
         </div>
 
