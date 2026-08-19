@@ -38,8 +38,6 @@ function UiIcon({ name, size = 24 }: { name: string; size?: number }) {
   if (name === "eye") return <svg {...common}><path d="M2.8 12s3.3-6 9.2-6 9.2 6 9.2 6" /><circle cx="12" cy="12" r="2.2" /></svg>;
   if (name === "help") return <svg {...common}><circle cx="12" cy="12" r="8.3" /><path d="M9.8 9.2a2.4 2.4 0 1 1 3.1 2.3c-.7.3-.9.8-.9 1.5" /><path d="M12 16.5h.01" /></svg>;
   if (name === "mail") return <svg {...common}><rect x="2.8" y="5.2" width="15.2" height="11.2" rx="2.2" /><path d="m4.4 7 6 4.6L16.5 7" /><path d="M20.2 10.8v6M17.2 13.8h6" /></svg>;
-  if (name === "cards") return <svg {...common}><rect x="7" y="3" width="11.5" height="17" rx="3" /><path d="M4.5 7v10.2A3.8 3.8 0 0 0 8.3 21" /><path d="M11.5 6.3h2.5" /></svg>;
-  if (name === "credit") return <svg {...common}><rect x="6" y="2.5" width="12" height="19" rx="3" /><path d="M10.5 5.8h3" /></svg>;
   return <svg {...common}><path d="m9 5 7 7-7 7" /></svg>;
 }
 
@@ -90,7 +88,7 @@ export default function Home() {
 
         <div className="section-padding cards-padding">
           <button className="my-cards" type="button" onClick={() => showNotice("Seus cartões")}>
-            <span className="my-cards-main"><UiIcon name="cards" size={27} /><span>Meus cartões</span></span>
+            <span className="my-cards-main"><span className="card-icon-frame"><img className="card-icon" src="/action-icons/cartoes.png" alt="" /></span><span>Meus cartões</span></span>
             <span className="card-count">3</span>
           </button>
         </div>
@@ -108,7 +106,7 @@ export default function Home() {
       <div className="divider" />
 
       <section className="credit-section" aria-labelledby="credit-title">
-        <UiIcon name="credit" size={23} />
+        <span className="card-icon-frame"><img className="card-icon" src="/action-icons/cartoes.png" alt="" /></span>
         <button className="section-heading credit-heading" type="button" onClick={() => showNotice("Detalhes do cartão de crédito")}>
           <h2 id="credit-title">Cartão de crédito</h2><UiIcon name="chevron" size={20} />
         </button>

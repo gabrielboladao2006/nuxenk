@@ -32,12 +32,14 @@ button:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 .quick-scroll { gap: 13px; margin-top: 36px; padding: 0 27px 6px; scroll-padding-inline: 27px; touch-action: pan-x; -webkit-overflow-scrolling: touch; }
 .quick-action { flex: 0 0 70px; padding: 0; background: transparent; text-align: center; scroll-snap-align: start; }
 .quick-circle { display: grid; width: 70px; height: 70px; place-items: center; border-radius: 50%; background: var(--light-gray); }
-.quick-icon { display: block; width: 58px; height: 58px; object-fit: contain; object-position: center; }
+.quick-icon, .card-icon { display: block; width: 50px; height: 50px; object-fit: contain; object-position: center; }
 .quick-action > span:last-child { display: block; margin-top: 12px; font-size: 14px; font-weight: 600; line-height: 17px; white-space: nowrap; }
 
 .cards-padding { margin-top: 41px; }
 .my-cards { width: 100%; height: 55px; padding: 0 15px 0 17px; border-radius: 9px; background: var(--light-gray); font-size: 14px; font-weight: 700; }
 .my-cards-main { gap: 12px; }
+.card-icon-frame { position: relative; display: inline-grid; width: 27px; height: 27px; flex: 0 0 27px; place-items: center; }
+.card-icon { position: absolute; max-width: none; mix-blend-mode: multiply; }
 .card-count { min-width: 16px; text-align: center; }
 .notices-scroll { gap: 18px; margin-top: 23px; padding: 0 22px; }
 .notice-card { flex: 0 0 274px; height: 84px; padding: 0 24px; border-radius: 10px; background: var(--light-gray); font-size: 14px; line-height: 20px; text-align: left; scroll-snap-align: start; }
