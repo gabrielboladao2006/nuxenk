@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const quickActions = [
-  { label: "Pix", icon: "pix" },
-  { label: "Pagar", icon: "barcode" },
-  { label: "Transferir", icon: "transfer" },
-  { label: "Depositar", icon: "deposit" },
-  { label: "Recarga", icon: "phone" },
+  { label: "Pix", image: "/action-icons/pix.png" },
+  { label: "Pagar", image: "/action-icons/pagar.png" },
+  { label: "Transferir", image: "/action-icons/transferir.png" },
+  { label: "Depositar", image: "/action-icons/depositar.png" },
+  { label: "Recarga", image: "/action-icons/recarga.png" },
 ];
 
 const learnCards = [
@@ -38,11 +38,6 @@ function UiIcon({ name, size = 24 }: { name: string; size?: number }) {
   if (name === "eye") return <svg {...common}><path d="M2.8 12s3.3-6 9.2-6 9.2 6 9.2 6" /><circle cx="12" cy="12" r="2.2" /></svg>;
   if (name === "help") return <svg {...common}><circle cx="12" cy="12" r="8.3" /><path d="M9.8 9.2a2.4 2.4 0 1 1 3.1 2.3c-.7.3-.9.8-.9 1.5" /><path d="M12 16.5h.01" /></svg>;
   if (name === "mail") return <svg {...common}><rect x="2.8" y="5.2" width="15.2" height="11.2" rx="2.2" /><path d="m4.4 7 6 4.6L16.5 7" /><path d="M20.2 10.8v6M17.2 13.8h6" /></svg>;
-  if (name === "pix") return <img className="pix-icon" src="/pix-icon.png" alt="" />;
-  if (name === "barcode") return <svg {...common} strokeWidth="2.3"><path d="M5 8v8M8 8v8M11.5 8v8M14 8v8M18 8v8" /></svg>;
-  if (name === "transfer") return <svg {...common}><rect x="2.5" y="5" width="15" height="10.5" rx="1.2" /><circle cx="10" cy="10.2" r="1.5" /><path d="M15 12.7 21 6.8M16.8 6.8H21V11" /></svg>;
-  if (name === "deposit") return <svg {...common}><rect x="2.5" y="5" width="15" height="10.5" rx="1.2" /><circle cx="10" cy="10.2" r="1.5" /><path d="m15 11.5 6 5.8M21 13v4.3h-4.2" /></svg>;
-  if (name === "phone") return <svg {...common}><rect x="6.6" y="2.7" width="10.8" height="18.6" rx="2.2" /><path d="M10.2 5h3.6M11.4 18.8h1.2" /></svg>;
   if (name === "cards") return <svg {...common}><rect x="7" y="3" width="11.5" height="17" rx="3" /><path d="M4.5 7v10.2A3.8 3.8 0 0 0 8.3 21" /><path d="M11.5 6.3h2.5" /></svg>;
   if (name === "credit") return <svg {...common}><rect x="6" y="2.5" width="12" height="19" rx="3" /><path d="M10.5 5.8h3" /></svg>;
   return <svg {...common}><path d="m9 5 7 7-7 7" /></svg>;
@@ -87,7 +82,7 @@ export default function Home() {
         <div className="quick-scroll" aria-label="Ações rápidas">
           {quickActions.map((action) => (
             <button className="quick-action" type="button" key={action.label} onClick={() => showNotice(`${action.label} selecionado`)}>
-              <span className="quick-circle"><UiIcon name={action.icon} size={28} /></span>
+              <span className="quick-circle"><img className="quick-icon" src={action.image} alt="" /></span>
               <span>{action.label}</span>
             </button>
           ))}

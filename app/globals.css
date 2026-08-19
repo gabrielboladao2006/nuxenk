@@ -29,10 +29,10 @@ button:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 
 .quick-scroll, .notices-scroll, .learn-scroll { display: flex; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; scroll-snap-type: x proximity; }
 .quick-scroll::-webkit-scrollbar, .notices-scroll::-webkit-scrollbar, .learn-scroll::-webkit-scrollbar { display: none; }
-.quick-scroll { gap: 13px; margin-top: 36px; padding: 0 27px; }
+.quick-scroll { gap: 13px; margin-top: 36px; padding: 0 27px 6px; scroll-padding-inline: 27px; touch-action: pan-x; -webkit-overflow-scrolling: touch; }
 .quick-action { flex: 0 0 70px; padding: 0; background: transparent; text-align: center; scroll-snap-align: start; }
 .quick-circle { display: grid; width: 70px; height: 70px; place-items: center; border-radius: 50%; background: var(--light-gray); }
-.pix-icon { display: block; width: auto; height: 50px; }
+.quick-icon { display: block; width: 58px; height: 58px; object-fit: contain; object-position: center; }
 .quick-action > span:last-child { display: block; margin-top: 12px; font-size: 14px; font-weight: 600; line-height: 17px; white-space: nowrap; }
 
 .cards-padding { margin-top: 41px; }
