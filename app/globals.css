@@ -2,7 +2,8 @@
 
 :root { --purple: #820ad1; --light-gray: #f0f1f5; --line: #ececf0; --text: #101010; }
 * { box-sizing: border-box; }
-html, body { margin: 0; min-width: 280px; min-height: 100%; background: #eeeeef; color: var(--text); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+html, body { margin: 0; min-width: 280px; min-height: 100%; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+body { min-height: 100dvh; }
 button { color: inherit; font: inherit; -webkit-tap-highlight-color: transparent; }
 button:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 .app-header button:focus-visible { outline-color: #fff; }
@@ -68,5 +69,37 @@ button:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 .toast { position: fixed; z-index: 10; right: 50%; bottom: 18px; max-width: min(340px, calc(100% - 32px)); padding: 10px 15px; border-radius: 999px; background: #171717; color: #fff; font-size: 13px; opacity: 0; pointer-events: none; transform: translate(50%, 12px); transition: opacity 160ms ease, transform 160ms ease; }
 .toast--visible { opacity: 1; transform: translate(50%, 0); }
 
-@media (max-width: 390px) { .app-shell { margin: 0; box-shadow: none; } }
+@media (max-width: 599px) { .app-shell { margin: 0 auto; box-shadow: none; } }
+
+@media (min-width: 600px) {
+  body {
+    display: grid;
+    min-height: 100dvh;
+    place-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .app-shell {
+    width: 390px;
+    height: 760px;
+    min-height: 760px;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 9px solid #3f3a43;
+    border-radius: 43px;
+    outline: 3px solid #aaa3ad;
+    background: #fff;
+    box-shadow:
+      0 0 0 2px #6d6670,
+      inset 0 0 0 1px #d8d3da,
+      0 22px 54px rgb(0 0 0 / 55%);
+    scrollbar-width: none;
+    transform: scale(.72);
+  }
+
+  .app-shell::-webkit-scrollbar { display: none; }
+  .app-header { border-radius: 33px 33px 0 0; }
+}
 @media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
