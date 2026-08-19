@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const quickActions = [
   { label: "Pix", image: "/action-icons/pix.png" },
   { label: "Pagar", image: "/action-icons/pagar.png" },
+  { label: "Pegar emprestado", image: "/action-icons/pegar-emprestado.png" },
   { label: "Transferir", image: "/action-icons/transferir.png" },
   { label: "Depositar", image: "/action-icons/depositar.png" },
   { label: "Recarga", image: "/action-icons/recarga.png" },
